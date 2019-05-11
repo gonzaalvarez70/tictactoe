@@ -1,26 +1,25 @@
 package com.alvarez.Entities;
 
+import com.alvarez.Enums.CellStatus;
 import com.alvarez.Enums.GameStatus;
-
-import java.util.List;
 
 public class Game {
 
-    private List<Cell> board;
+    private CellStatus[][] board;
     private long timeSpent;
     private GameStatus gameStatus;
 
-    public Game(List<Cell> board) {
+    public Game(CellStatus[][] board) {
         this.timeSpent = 0;
         gameStatus = GameStatus.IN_PROGRESS;
         this.board = board;
     }
 
-    public List<Cell> getBoard() {
+    public CellStatus[][] getBoard() {
         return board;
     }
 
-    public void setBoard(List<Cell> board) {
+    public void setBoard(CellStatus[][] board) {
         this.board = board;
     }
 
