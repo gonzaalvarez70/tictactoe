@@ -15,8 +15,8 @@ public class GameController {
     }
 
     @PostMapping("/input")
-    public ResponseEntity<?> input(@RequestParam("x") int x, @RequestParam("y") int y) {
-        return new ResponseEntity<>("NotImplemented", HttpStatus.OK);
+    public ResponseEntity<Game> input(@RequestParam("x") int x, @RequestParam("y") int y, @RequestBody() Game game) {
+        return new ResponseEntity<>(GameService.playerInput(x, y, game), HttpStatus.OK);
     }
 
     @PostMapping("/save")
